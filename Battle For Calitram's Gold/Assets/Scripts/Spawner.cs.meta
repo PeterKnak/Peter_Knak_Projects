@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2343ad9355e7441479769c9a640b3d23
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - laneSelector: {instanceID: 0}
+  - soldier: {fileID: 5977735395793442941, guid: 08600a3d3d9125a48b7fdba90e2c5de7,
+      type: 3}
+  - knight: {fileID: 5579789815898264780, guid: e1e5b0aca2150fa47b96f1306ee5912b,
+      type: 3}
+  - cowboy: {fileID: 5202449569155221675, guid: 28783f63995262146a9b4f2846e9a3d4,
+      type: 3}
+  - wizard: {fileID: 4964266797079766357, guid: c8f3a322b703ec6428fed630a46faa65,
+      type: 3}
+  - tank: {fileID: 4354306342742225964, guid: fd87f6454d6811d48ac5144df82fb4ce, type: 3}
+  - truck: {fileID: 4225736585022024549, guid: 579d53e28182b9f429c988d89a2a98b4, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
