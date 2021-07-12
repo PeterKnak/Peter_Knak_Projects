@@ -20,9 +20,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        // Take damage and update health bar.
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        if(currentHealth <= 0)
+
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -36,7 +38,10 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
+        // Set health to 100 so the Die() function is only run once.
         currentHealth = 100f;
+
+        // Delete player scripts, colliders, healthbar and play death animation. 
         Destroy(FindObjectOfType<HealthDisplay>().gameObject);
         myAnimator.SetTrigger("die");
         Destroy(gameObject.GetComponent<Rigidbody2D>());

@@ -17,18 +17,19 @@ public class EnemyAI : MonoBehaviour
     Vector2 originalScale; 
     bool chasingPlayer = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         originalScale = transform.localScale;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Set the player as the enemy's target.
         Transform target = FindObjectOfType<PlayerMovement>().transform;
         if (!chasingPlayer)
         {
+
+            // Chase player if they are in range.
             if (Vector2.Distance(target.transform.position, transform.position) <= lookRadius)
             {
                 myAnimator.SetBool("beginChase", true);
@@ -52,12 +53,15 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Stop moving and attack.
         myAnimator.SetTrigger("attack");
         moveSpeed = 0;
     }
 
     public void AttackPlayer()
     {
+        // This is run from the animator. Deal damage to the player if they are within attacking range.
+
         Transform target = FindObjectOfType<PlayerHealth>().transform;
         if(Vector2.Distance(target.transform.position, transform.position) <= attackRange)
         {

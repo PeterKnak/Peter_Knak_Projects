@@ -19,6 +19,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Set different arrow keys to different attacks
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             Attack(1);
@@ -39,6 +41,8 @@ public class PlayerAttack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, 1.5f, enemyLayer);
         foreach (Collider2D enemy in hitEnemies)
         {
+
+            // Run the right method depending on what has been collided with
             if(enemy.GetComponent<Enemy>() != null)
             {
                 enemy.GetComponent<Enemy>().TakeDamage(damageAmount);

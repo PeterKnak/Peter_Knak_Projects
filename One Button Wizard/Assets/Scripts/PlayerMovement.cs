@@ -12,17 +12,19 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    // Update is called once per frame
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        // Character faces direction they're moving in.
         if(movement.x != 0)
         {
             transform.localScale = new Vector2(Mathf.Sign(movement.x) * originalScale.x, originalScale.y);
         }
  
+
+        // Set animation state based on movement.
         if(movement.x == 0 && movement.y == 0)
         {
             myAnimator.SetBool("isMoving", false);
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Move player in the direction pressed.
         myRigidbody.MovePosition(myRigidbody.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 

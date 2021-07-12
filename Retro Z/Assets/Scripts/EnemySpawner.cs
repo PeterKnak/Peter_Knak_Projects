@@ -10,10 +10,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] bool looping = false;
     [SerializeField] AudioClip[] zombieSounds;
 
-    // Cached component references
     AudioSource myAudioSource;
 
-    // Start is called before the first frame update
     IEnumerator Start()
     {
         myAudioSource = GetComponent<AudioSource>();
@@ -41,7 +39,6 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int enemyCount = 0; enemyCount < waveConfig.GetNumberOfEnemies(); enemyCount++)
         {
-            //float zPos = enemyCount - 5;
             var newEnemy = Instantiate(waveConfig.GetEnemyPrefab(),
                         new Vector3(waveConfig.GetWaypoints()[0].transform.position.x, waveConfig.GetWaypoints()[0].transform.position.y, waveConfig.GetWaypoints()[0].transform.position.z),
                 Quaternion.identity);

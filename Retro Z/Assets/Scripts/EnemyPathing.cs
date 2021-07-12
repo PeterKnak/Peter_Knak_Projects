@@ -11,15 +11,12 @@ public class EnemyPathing : MonoBehaviour
     int waypointIndex = 0;
     float distanceFromPlayer = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         waypoints = waveConfig.GetWaypoints();
-        //transform.position = waypoints[waypointIndex].transform.position;
         target = GameObject.FindWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    //Config Params
     [Header("Player")]
     [SerializeField] float speed = 5f;
     [SerializeField] int health = 200;
@@ -28,7 +27,6 @@ public class player : MonoBehaviour
     bool allowFire = true;
     AudioSource myAudiosource;
 
-    // Start is called before the first frame update
     void Start()
     {
         myAudiosource = GetComponent<AudioSource>();
@@ -36,7 +34,6 @@ public class player : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
@@ -49,7 +46,6 @@ public class player : MonoBehaviour
         var deltaX = Time.deltaTime * speed * Input.GetAxis("Horizontal");
         var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
         transform.position = new Vector2(newXPos, transform.position.y);
-
     }
 
     private void Fire()

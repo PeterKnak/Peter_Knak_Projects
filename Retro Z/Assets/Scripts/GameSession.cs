@@ -6,10 +6,8 @@ using TMPro;
 public class GameSession : MonoBehaviour
 {
 
-    // State Variables
     int currentScore = 0;
 
-    // Start is called before the first frame update
     void Awake()
     {
         SetUpSingleton();

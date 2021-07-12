@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] int zombieKillPoints;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
@@ -30,7 +29,6 @@ public class Enemy : MonoBehaviour
         transform.localScale = new Vector3(newDirection, transform.localScale.y, transform.localScale.z);
     }
 
-       // Update is called once per frame
     void Update()
     {
         if (Mathf.Round(10 * Time.time) % UnityEngine.Random.Range(10, 40) == 0)
