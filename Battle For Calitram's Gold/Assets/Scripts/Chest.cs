@@ -9,6 +9,7 @@ public class Chest : MonoBehaviour
     {
         if (collision.gameObject.tag != "InvaderProjectile" && collision.gameObject.tag != "TurretProjectile")
         {
+            // Make sure the chest can only be picked up once
             if (isColliding)
             {
                 return;

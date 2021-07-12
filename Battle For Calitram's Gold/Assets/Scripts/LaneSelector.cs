@@ -7,12 +7,6 @@ public class LaneSelector : MonoBehaviour
 {
     [SerializeField] int position;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -46,6 +40,8 @@ public class LaneSelector : MonoBehaviour
         {
             position = Mathf.Clamp(position - 1, 0, 2);
         }
+
+        // There is a slight delay to prevent the lane selector moving up or down multiple lanes at once.
         yield return new WaitForSeconds(0.1f);
 
     }

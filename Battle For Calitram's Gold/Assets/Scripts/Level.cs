@@ -25,9 +25,6 @@ public class Level : MonoBehaviour
         {
             Destroy(gameObject);
         } 
-            
-        
-        
     }
 
     private void Start()

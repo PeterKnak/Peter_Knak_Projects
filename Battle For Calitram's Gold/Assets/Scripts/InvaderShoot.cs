@@ -11,13 +11,6 @@ public class InvaderShoot : MonoBehaviour
 
     bool allowFire = true;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (invader.IsInRange())
@@ -39,6 +32,8 @@ public class InvaderShoot : MonoBehaviour
     {
         allowFire = false;
         Instantiate(projectile, new Vector2(transform.position.x + 0.3f, transform.position.y), projectileQuaternion);
+
+        // Wait for some interval before firing again
         yield return new WaitForSeconds(projectileFiringPeriod + Random.Range(0, 0.5f));
         allowFire = true;
     }

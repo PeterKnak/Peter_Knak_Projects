@@ -7,9 +7,9 @@ public class Projectile : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] int damage;
 
-    // Update is called once per frame
     void Update()
     {
+        // The projectile moves forward. It will have a collider on it that will trigger when it hits an invader.
         Move();
     }
 

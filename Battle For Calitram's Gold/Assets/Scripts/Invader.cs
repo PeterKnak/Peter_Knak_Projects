@@ -21,7 +21,6 @@ public class Invader : MonoBehaviour
         weaponRange += Random.Range(-0.2f, 0.2f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         // By default the invader is out of range of all turrets
@@ -64,6 +63,7 @@ public class Invader : MonoBehaviour
 
     private void Attack()
     {
+        // Play animation and deal damage to turret
         animator.SetBool("inRange", true);
         if(turret != null)
         {
@@ -90,7 +90,8 @@ public class Invader : MonoBehaviour
         {
             float xDistanceToTarget = Mathf.Abs(potentialTarget.transform.position.x - currentPosition.x);
             float yDistanceToTarget = Mathf.Abs(potentialTarget.transform.position.y - currentPosition.y);
-            //Find the turret with closest x distance and that is on the right lane
+
+            // Find the turret with closest x distance and that is on the right lane
             if (xDistanceToTarget < closestXDistance && yDistanceToTarget < 1f)
             {
                 closestXDistance = xDistanceToTarget;
@@ -113,6 +114,8 @@ public class Invader : MonoBehaviour
     void TakeDamage(float damage)
     {
         health -= damage;
+  
+        // Check if invader has been killed
         if(health <= 0)
         {
             Instantiate(deathSound, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
